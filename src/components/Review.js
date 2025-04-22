@@ -65,7 +65,7 @@ const Review = () => {
     <div>
         <h1 id="review-heading">Our Reviews</h1>
     <div className='review'>
-      <h2 className='auhtor' id={`author-${arr[currentIndex].id}`}>{arr[currentIndex].name}</h2>
+      <h2 className='author' id={`author-${arr[currentIndex].id}`}>{arr[currentIndex].name}</h2>
       <h3 className='job'>{arr[currentIndex].job}</h3>
       <img className='person-img' src={arr[currentIndex].image} alt={arr[currentIndex].name} />
       <p className='info'>{arr[currentIndex].text}</p>
