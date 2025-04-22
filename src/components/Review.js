@@ -54,17 +54,21 @@ const Review = () => {
           }
           function handleSurpriseMe(e){
             e.preventDefault()
-            setCurrentIndex((e)=> { return Math.floor(Math.random()*arr.length-1)})
+            let newIndex;
+  do {
+    newIndex = Math.floor(Math.random() * arr.length);
+  } while (newIndex === currentIndex); // Avoid same index
+  setCurrentIndex(newIndex);
           }
 
   return (
     <div>
         <h1 id="review-heading">Our Reviews</h1>
     <div className='review'>
-      <h2>{arr[currentIndex].name}</h2>
-      <h3>{arr[currentIndex].job}</h3>
-      <img src={arr[currentIndex].image} alt={arr[currentIndex].name} />
-      <p>{arr[currentIndex].text}</p>
+      <h2 className='auhtor' id={`author-${arr[currentIndex].id}`}>{arr[currentIndex].name}</h2>
+      <h3 className='job'>{arr[currentIndex].job}</h3>
+      <img className='person-img' src={arr[currentIndex].image} alt={arr[currentIndex].name} />
+      <p className='info'>{arr[currentIndex].text}</p>
     </div>
    
     <button onClick={handlePrev} className='prev-btn'>Previous</button>
