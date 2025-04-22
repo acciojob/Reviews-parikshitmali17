@@ -71,8 +71,10 @@ const Review = () => {
       <p className='info'>{arr[currentIndex].text}</p>
     </div>
    
+    <div className="button-container">
     <button onClick={handlePrev} className='prev-btn'>Previous</button>
     <button onClick={handleNext} className='next-btn'>Next</button>
+    </div>
     <button onClick={handleSurpriseMe} className='random-btn'>surprise me</button>
     </div>
   )
